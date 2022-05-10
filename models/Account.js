@@ -17,6 +17,7 @@ class Account extends Model {
   }
 
   async verifyPassword(plainTextPassword) {
+    console.log(`compare(${plainTextPassword}, ${this.password})`);
     return compare(plainTextPassword, this.password);
   }
 }

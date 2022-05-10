@@ -7,29 +7,29 @@
 
       <v-form v-model="valid">
         <v-text-field
-            v-model="email"
-            label="Email"
-            name="email"
-            type="text"
+          v-model="member.email"
+          label="Email"
+          name="email"
+          type="text"
         ></v-text-field>
         <v-text-field
-            v-model="password"
-            id="password"
-            label="Current Password"
-            name="password"
-            type="password"
+          v-model="member.currentPassword"
+          id="password"
+          label="Current Password"
+          name="password"
+          type="password"
         ></v-text-field>
         <v-text-field
-            v-model="newPassword"
-            id="newPassword"
-            label="New Password"
-            name="newPassword"
-            type="password"
+          v-model="member.newPassword"
+          id="newPassword"
+          label="New Password"
+          name="newPassword"
+          type="password"
         ></v-text-field>
         <v-text-field
-          v-model="confirmPassword"
+          v-model="member.confirmPassword"
           id="confirmPassword"
-          v-bind:rules="confirmPassword"
+          v-bind:rules="rules.confirmPassword"
           type="password"
           label="Confirm new password"
           required
@@ -72,7 +72,7 @@ export default {
   components: {
     Instructions, // Use the Instructions component we just imported
   },
-  data: function () {
+  data: function() {
     return {
       valid: false, // Are all the fields in the form valid?
 
@@ -120,7 +120,7 @@ export default {
   },
   methods: {
     // Invoked when the user clicks the 'Reset' button.
-    handleSubmit: function () {
+    handleSubmit: function() {
       // Haven't been successful yet.
       this.resetPassword = false;
 
@@ -146,7 +146,7 @@ export default {
     },
 
     // Helper method to display the dialog box with the appropriate content.
-    showDialog: function (header, text) {
+    showDialog: function(header, text) {
       this.dialogHeader = header;
       this.dialogText = text;
       this.dialogVisible = true;
@@ -154,7 +154,7 @@ export default {
 
     // Invoked by the "Okay" button on the dialog; dismiss the dialog
     // and navigate to the home page.
-    hideDialog: function () {
+    hideDialog: function() {
       this.dialogVisible = false;
       if (this.resetPassword) {
         // Only navigate away from the reset-password page if we were successful.

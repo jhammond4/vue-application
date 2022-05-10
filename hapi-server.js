@@ -21,7 +21,7 @@ const Joi = require("@hapi/joi"); // Input validation
 const Hapi = require("@hapi/hapi"); // Server
 
 const server = Hapi.server({
-  host: "localhost",
+host: "localhost",
   port: 3000,
   routes: {
     cors: true,
@@ -182,10 +182,11 @@ async function init() {
         .first();
       if (
         account &&
-        (await account.verifyPassword(request.payload.password))
+        (await account.verifyPassword(request.payload.currentPassword))
       ) {
         return {
           ok: true,
+          msge: "Password updated successfully"
         };
       } else {
         return {

@@ -6,7 +6,7 @@ import SignIn from "./pages/SignIn.vue";
 import SignUp from "./pages/SignUp.vue";
 import About from "./pages/About.vue";
 import Accounts from "./pages/Accounts.vue";
-import ResetPassword from "./components/ResetPassword.vue";
+import ResetPassword from "./pages/ResetPassword.vue";
 
 Vue.use(Router);
 
