@@ -22,6 +22,7 @@
         <v-text-field
           v-model="member.newPassword"
           id="newPassword"
+          v-bind:rules="rules.confirmPassword"
           label="New Password"
           name="newPassword"
           type="password"
